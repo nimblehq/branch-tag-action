@@ -1,0 +1,12 @@
+name: Branch Tag Action
+description: Get branch tag and set to ENV
+inputs:
+  ref:
+    description: 'The branch or tag ref'
+    required: true
+    default: ${{ github.ref }}
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.ref }}

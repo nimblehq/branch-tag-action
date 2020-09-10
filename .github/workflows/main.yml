@@ -1,0 +1,20 @@
+name: Main
+
+on: [push]
+
+jobs:
+  print_branch_tag:
+    runs-on: ubuntu-latest
+    name: A job to print branch tag
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./
+        name: Extract branch tag
+        id: extract
+
+      # Use the output/env from the `extract` step
+      - name: Print the values
+        run: |
+          echo "The branch tag is ${{ steps.extract.outputs.branch_tag }}"
+          echo "or ${{ env.BRANCH_TAG }}"
