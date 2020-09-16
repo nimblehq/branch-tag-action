@@ -1,9 +1,11 @@
 # Branch tag action
 
-This action returns the valid docker image tag name by extracting the branch from branch name or tag ref and replacing `/` by `-` using [Shell Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+This action returns the valid docker image tag name by extracting the branch from branch or tag ref and replacing `/` by `-` using [Shell Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
 
 ```
-#refs/heads/feature/add-new-action -> feature-add-new-action
+refs/heads/feature/add-new-action -> feature-add-new-action
+refs/tags/1.0.0 -> 1.0.0
+refs/heads/master -> latest
 ```
 
 ## Inputs
