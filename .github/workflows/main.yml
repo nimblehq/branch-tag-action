@@ -1,6 +1,8 @@
 name: Main
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   print_branch_tag:
@@ -16,5 +18,5 @@ jobs:
       # Use the output/env from the `extract` step
       - name: Print the values
         run: |
-          echo "The branch tag is ${{ steps.extract.outputs.branch_tag }}"
-          echo "or ${{ env.BRANCH_TAG }}"
+          echo "Output: ${{ steps.extract.outputs.branch_tag }}"
+          echo "Environment variable: ${{ env.BRANCH_TAG }}"

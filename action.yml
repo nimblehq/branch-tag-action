@@ -1,13 +1,13 @@
 name: Branch Tag Action
 description: Get branch tag and set to ENV
 branding:
-  icon: 'git-branch'  
+  icon: 'git-branch'
   color: 'purple'
 inputs:
   ref:
     description: 'The branch or tag ref'
     required: true
-    default: ${{ github.ref }}
+    default: ${{ github.head_ref || github.ref }}
 runs:
   using: docker
   image: Dockerfile
