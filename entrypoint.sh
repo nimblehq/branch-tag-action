@@ -15,4 +15,4 @@ else
 fi
 
 echo "BRANCH_TAG=$BRANCH_TAG" >> $GITHUB_ENV
-echo "name=branch_tag::$BRANCH_TAG" >> $GITHUB_OUTPUT
+echo "branch_tag=$BRANCH_TAG" >> $GITHUB_OUTPUT
